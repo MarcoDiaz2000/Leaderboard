@@ -1,14 +1,26 @@
 import _ from 'lodash';
 import './style.css';
+import formHandler from './modules/form.js';
+import { addScore, getScores } from './modules/score.js';
 
-function component() {
-  const element = document.createElement('div');
+document.addEventListener('DOMContentLoaded', (event) => {
+    const scoresDiv = document.getElementById('scores');
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
+    function updateScores() {
+        scoresDiv.innerHTML = '';
+        getScores().forEach((score, index) => {
+            scoresDiv.innerHTML += `<p>${index + 1}. ${score.name}: ${score.score}</p>`;
+        });
+    }
 
-  return element;
-}
+    formHandler((score) => {
+        addScore(score);
+        updateScores();
+    });
 
-document.body.appendChild(component());
+    const refreshButton = document.querySelector('.recent-score button');
+    refreshButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        updateScores();
+    });
+});

@@ -25,9 +25,9 @@ Hello, I am Marco Díaz
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [To-do list] <a name="about-project"></a>
+# 📖 [Leaderboard] <a name="about-project"></a>
 
-"To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete. You will build a simple website that allows for doing that, and you will do it using ES6 and Webpack!
+The leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved thanks to the external Leaderboard API service.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -42,11 +42,10 @@ GitHub & Visual Studio Code
 
 ### Key Features <a name="key-features"></a>
 
-- Adding a new item.
-- Removing a selected item.
-- Marking a selected item as complete.
-- Removing all items marked as complete at once.
-- Reordering a selected item (as drag-and-drop) [as an additional feature].
+- The leaderboard website displays scores submitted by different players.
+- It also allows you to submit your score.
+- All data is preserved thanks to the external Leaderboard API service.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -70,7 +69,7 @@ Install Node Js on your local computer
 
 Install this project with:
 
-<pre> git clone https://github.com/MarcoDiaz2000/To-do-list.git</pre>
+<pre> git clone https://github.com/MarcoDiaz2000/Leaderboard.git</pre>
 
 ### Usage
 
@@ -82,7 +81,7 @@ To run tests, run a live server on your computer.
 
 ### Deployment
 
-You can deploy this project in this link: <a href="https://marcodiaz2000.github.io/To-do-list/dist/">www.marcodiaz2000.github.io/To-do-list/dist/</a>
+You can deploy this project in this link: <a href="https://marcodiaz2000.github.io/Leaderboard/dist/">www.marcodiaz2000.github.io/Leaderboard/dist/</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -104,7 +103,7 @@ You can deploy this project in this link: <a href="https://marcodiaz2000.github.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- The user should be able to reorder the list by dragging each item and moving it into the desired position.
+- Special improvements in the design
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
