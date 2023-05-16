@@ -12,6 +12,6 @@ export default (callback) => {
     nameInput.value = '';
     scoreInput.value = '';
 
-    callback({ name: name, score: score });
+    callback({ name, score });
   });
 };
