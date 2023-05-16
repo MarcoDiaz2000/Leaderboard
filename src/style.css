@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  list-style: none;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+#body {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background: linear-gradient(90deg, rgb(232, 232, 235), rgb(115, 117, 115));
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  flex: 1;
+  padding: 20px;
+}
+
+.recent-score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#scores {
+  border: 1px solid #000;
+  height: 200px;
+  margin-top: 20px;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+button {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+button {
+  cursor: pointer;
+}

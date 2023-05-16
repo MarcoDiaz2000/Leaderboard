@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <script src="https://kit.fontawesome.com/84fe87cdc9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="body">
+        <h1>Leaderboard</h1>
+        <div class="row">
+          <div class="col">
+            <div class="recent-score">
+              <h2>Recent Scores</h2>
+              <button type="button">Refresh</button>
+            </div>
+            <div id="scores"> 
+            </div>
+          </div>
+          <div class="col">
+            <h2>Add your score</h2>
+            <form id="form">
+                <input type="text" id="input-name" placeholder="Your name" required>
+                <input type="number" id="input-score" placeholder="Your score" required>
+                <button type="submit">Submit<i class='fa fa-angle-double-right fa-lg'></i></button>
+            </form>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
