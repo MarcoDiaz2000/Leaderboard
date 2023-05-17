@@ -1,25 +1,27 @@
 import './style.css';
-import formHandler from './modules/form.js';
-import { addScore, getScores } from './modules/score.js';
+import { game, getScores, submitScores } from './modules/api.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async(e) => {
+  await game('micro-game');
+
   const scoresDiv = document.getElementById('scores');
 
-  function updateScores() {
+  async function updateScores() {
+    const scores = await getScores();
     scoresDiv.innerHTML = '';
-    getScores().forEach((score, index) => {
-      scoresDiv.innerHTML += `<p>${index + 1}. ${score.name}: ${score.score}</p>`;
+    scores.forEach((score, index) => {
+      scoresDiv.innerHTML += `<p>${index + 1}. ${score.user}: ${score.score}</p>`;
     });
   }
 
-  formHandler((score) => {
-    addScore(score);
-    updateScores();
+  document.querySelector('recent-score button').addEventListener('click' async () => {
+    await updateScores();
   });
 
-  const refreshButton = document.querySelector('.recent-score button');
-  refreshButton.addEventListener('click', (e) => {
+  document.getElementById('form').addEventListener('submit', async (e) => {
     e.preventDefault();
-    updateScores();
+    const name = document.getElementById('input-name').value;
+    const score = document.getElementById('input-score').value;
+    await submitScores(name, score);
   });
-});
+})

@@ -16,7 +16,7 @@ export async function getScores() {
     return data.result;
 }
 
-export async function submitScore(name, score) {
+export async function submitScores(name, score) {
     const response = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores`, {
     method: 'POST',
     body: JSON.stringify({user: name, score,}),
@@ -25,3 +25,5 @@ export async function submitScore(name, score) {
     const data = await response.json();
     return data;
 }
+
+game('maicro-game');
