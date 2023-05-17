@@ -10,7 +10,7 @@ export async function game(name) {
       headers: { 'Content-type': 'application/json; charset=UTF-8' },
     });
     const data = await response.json();
-    id = data.result.split(' ')[3];
+    [, , , id] = data.result.split(' ');
     localStorage.setItem('gameId', id);
   } else {
     id = gameId;
