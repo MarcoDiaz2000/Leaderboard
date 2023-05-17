@@ -5,17 +5,17 @@ export async function game(name) {
   const gameId = localStorage.getItem('gameId');
   if (!gameId) {
     response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
-        method: 'POST',
-        body: JSON.stringify({ name, }),
-        headers: { 'Content-type': 'application/json; charset=UTF-8', },
+      method: 'POST',
+      body: JSON.stringify({ name }),
+      headers: { 'Content-type': 'application/json; charset=UTF-8' },
     });
     const data = await response.json();
     id = data.result.split(' ')[3];
     localStorage.setItem('gameId', id);
-    } else {
-      id = gameId;
-    }
+  } else {
+    id = gameId;
   }
+}
 
 export async function getScores() {
   const response = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores`);
@@ -25,9 +25,9 @@ export async function getScores() {
 
 export async function submitScores(name, score) {
   const response = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores`, {
-  method: 'POST',
-  body: JSON.stringify({ user: name, score, }),
-  headers: { 'Content-type': 'application/json; charset=UTF-8', },  
+    method: 'POST',
+    body: JSON.stringify({ user: name, score }),
+    headers: { 'Content-type': 'application/json; charset=UTF-8' },
   });
   const data = await response.json();
   return data;

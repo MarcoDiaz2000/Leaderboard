@@ -2,8 +2,6 @@ import './style.css';
 import { game, getScores, submitScores } from './modules/api.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  await game('micro-game');
-
   const scoresDiv = document.getElementById('scores');
   await updateScores();
 
@@ -24,7 +22,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const name = document.getElementById('input-name').value;
     const score = document.getElementById('input-score').value;
     const result = await submitScores(name, score);
-    updateScores();
     await updateScores();
   });
+
+  await game('micro-game');
 });
