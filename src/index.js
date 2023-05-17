@@ -3,7 +3,6 @@ import { game, getScores, submitScores } from './modules/api.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const scoresDiv = document.getElementById('scores');
-  await updateScores();
 
   async function updateScores() {
     const scores = await getScores();
@@ -13,6 +12,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
+  await updateScores();
+
   document.querySelector('.recent-score button').addEventListener('click', async () => {
     await updateScores();
   });
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     e.preventDefault();
     const name = document.getElementById('input-name').value;
     const score = document.getElementById('input-score').value;
-    const result = await submitScores(name, score);
+    await submitScores(name, score);
     await updateScores();
   });
 
