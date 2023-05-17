@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', async(e) => {
     e.preventDefault();
     const name = document.getElementById('input-name').value;
     const score = document.getElementById('input-score').value;
-    console.log(`Submitting score for ${name} with score ${score}`); // test
+    console.log(`Submitting score for ${name} with score ${score}`);
     const result = await submitScores(name, score);
-    console.log(result); // response api
-    updateScores(); // update scores
+    console.log(result);
+    updateScores();
     await updateScores();
 });
 })
