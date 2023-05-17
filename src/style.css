@@ -1,17 +1,29 @@
 * {
   box-sizing: border-box;
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
   list-style: none;
-  font-weight: bold;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f4f4f4;
+  padding: 0;
+  margin: 0;
 }
 
 #body {
+  width: 75%;
   max-width: 1200px;
   margin: auto;
   padding: 20px;
-  background: linear-gradient(90deg, rgb(232, 232, 235), rgb(115, 117, 115));
+  background: #fefefe;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
 .row {
@@ -22,6 +34,14 @@
 .col {
   flex: 1;
   padding: 20px;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.col:hover {
+  transform: scale(1.02);
 }
 
 .recent-score {
@@ -31,11 +51,12 @@
 }
 
 #scores {
-  border: 1px solid #000;
+  border: 1px solid #ddd;
   height: 200px;
   margin-top: 20px;
   padding: 20px;
   overflow-y: scroll;
+  border-radius: 10px;
 }
 
 form {
@@ -47,8 +68,23 @@ input,
 button {
   margin-top: 20px;
   padding: 10px;
+  border: none;
+  border-radius: 5px;
+  transition: border 0.3s ease-in-out;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid #007bff;
 }
 
 button {
   cursor: pointer;
+  background: #007bff;
+  color: #fff;
+  transition: background 0.5s;
+}
+
+button:hover {
+  background: #0056b3;
 }
